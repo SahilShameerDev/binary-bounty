@@ -1,13 +1,14 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css'
 import TerminalLogin from './pages/terminalLogin'
 
 function App() {
-
   return (
-    <>
-      <TerminalLogin />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<TerminalLogin />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
