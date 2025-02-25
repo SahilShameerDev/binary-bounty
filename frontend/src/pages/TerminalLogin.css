@@ -1,0 +1,61 @@
+.terminal {
+    background-color: black;
+    color: limegreen;
+    font-family: "Courier New", monospace;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .output {
+    width: 80%;
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  input {
+    background: none;
+    border: none;
+    color: limegreen;
+    font-size: 18px;
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  
+  button {
+    background: none;
+    border: 1px solid limegreen;
+    color: limegreen;
+    padding: 5px 10px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .start-btn {
+    margin-top: 20px;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust space between text and input */
+  }
+  
+  .blinking-cursor {
+    padding: 5px;
+    font-size: 16px;
+  }
+  
