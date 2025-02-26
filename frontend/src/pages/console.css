@@ -1,0 +1,113 @@
+body {
+    background-color: black;
+    color: limegreen;
+    font-family: "Arial", sans-serif;
+  }
+  
+  .task2-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .left-container {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .right-container {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .log {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+  }
+  
+  h1 {
+    color: limegreen;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid limegreen;
+    background-color: black;
+    color: limegreen;
+    outline: none;
+    width: 80%;
+    text-align: center;
+  }
+  
+  button {
+    background-color: limegreen;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color: black;
+    color: limegreen;
+    border: 2px solid limegreen;
+  }
+  .task2-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .left-container, .right-container {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .jsdev img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input-container input {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .task2-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .left-container, .right-container {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
