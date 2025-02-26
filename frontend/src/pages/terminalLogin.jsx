@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./TerminalLogin.css";
 import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
-const TerminalLogin = ({ onLogin }) => {
+const TerminalLogin = ({ onLogin,setIsAuthorized}) => {
+  const navigate=useNavigate()
   const [step, setStep] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
@@ -47,6 +49,7 @@ const TerminalLogin = ({ onLogin }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
     if (name && department && year) {
       localStorage.setItem("userName", name);
       try {
@@ -56,7 +59,10 @@ const TerminalLogin = ({ onLogin }) => {
           year,
           timestamp: new Date(),
         });
-        onLogin({ name, department, year });
+        setIsAuthorized(true);
+        navigate("/consoledecode")
+       // onLogin({ name, department, year });
+        
       } catch (error) {
         console.error("Error saving user data: ", error);
       }
