@@ -5,6 +5,7 @@ import ConsoleDecode from './pages/ConsoleDecode'
 import { useState } from 'react';
 import CalculatorChallenge from './pages/CalculatorChallenge'
 
+
 function App() {
   const [isAuthorized, setIsAuthorized] = useState(false);
 
@@ -13,9 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<TerminalLogin setIsAuthorized={setIsAuthorized} />} />
         <Route path="/consoledecode" element={<ProtectedRoute isAuthorized={isAuthorized} />} />
-        <Route path="/" element={<TerminalLogin />} />
         <Route path="/t1" element={<CalculatorChallenge />}/>
-        
+
       </Routes>
     </BrowserRouter>
   );
