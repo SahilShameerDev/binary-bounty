@@ -4,6 +4,7 @@ function PdfDecode() {
       const [formData, setFormData] = useState("");
     
       const handleSubmit = () => {
+        //handle the firebase integration and verfiy with user answer
         alert("You can go to next task");
       };
     function handledownload() {
