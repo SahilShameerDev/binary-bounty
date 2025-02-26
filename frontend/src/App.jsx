@@ -9,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<TerminalLogin />} />
         <Route path="/t1" element={<CalculatorChallenge />}/>
+        
       </Routes>
     </BrowserRouter>
   )
