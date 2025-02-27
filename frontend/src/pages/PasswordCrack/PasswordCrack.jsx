@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./PasswordCrack.css";
+import { useNavigate } from "react-router-dom";
 
 const generateCode = () => {
   return Math.floor(1000 + Math.random() * 9000).toString(); // Ensures a 4-digit number
@@ -10,7 +11,7 @@ const PasswordCrack = ({ onSuccess }) => {
   const [userGuess, setUserGuess] = useState("");
   const [attempts, setAttempts] = useState([]);
   const [message, setMessage] = useState("");
-
+ const navigate=useNavigate()
   const checkGuess = () => {
     if (userGuess.length !== 4) {
       setMessage("⚠️ Enter a 4-digit number!");
@@ -19,7 +20,7 @@ const PasswordCrack = ({ onSuccess }) => {
 
     if (userGuess === password) {
       setMessage("✅ Correct! Moving to the next level!");
-      onSuccess(); // Move to next level
+      navigate("/calculator-t3")
       return;
     }
 

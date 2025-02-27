@@ -1,0 +1,94 @@
+.reverse-engineering-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: #00ff00;
+    font-family: "Courier New", Courier, monospace;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .instructions {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .hint {
+    font-size: 14px;
+    font-style: italic;
+    color: #aaaaaa;
+    margin-bottom: 15px;
+  }
+  
+  .input-field {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    background-color: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .submit-button {
+    background-color: #00ff00;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .submit-button:hover {
+    background-color: #009900;
+  }
+  
+  .output1 {
+    font-size: 18px;
+    color: #ffcc00;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  .key-reveal {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #002200;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+  }
+  
+  .success-message {
+    font-size: 18px;
+    color: #00ff00;
+    font-weight: bold;
+  }
+  
+  .key-text {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  
+  .redirect-message {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #cccccc;
+  }
+  
+  .invalid-user {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+  }

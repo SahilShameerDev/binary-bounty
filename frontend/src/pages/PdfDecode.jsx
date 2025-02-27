@@ -1,11 +1,18 @@
 import React, { useState } from 'react'
 import "./t4.css"
+import { useNavigate } from 'react-router-dom';
 function PdfDecode() {
       const [formData, setFormData] = useState("");
-    
+      const navigate=useNavigate()
       const handleSubmit = () => {
         //handle the firebase integration and verfiy with user answer
+        if(formData=="you_got_key=1"){
         alert("You can go to next task");
+        navigate("/morse-t7")
+        }else{
+          alert("Not Correct!!!!!!!")
+        }
+
       };
     function handledownload() {
         alert("twist twist");

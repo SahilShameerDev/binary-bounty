@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 var ENCODED_KEY = "WkVkV2FsZ3pVbkJqTTFKbVdtMDVlbU14T0hsTlJqaDVXSHBWUFE9PQ==";
 import "./console.css";
+import { useNavigate } from "react-router-dom";
 
 function ConsoleDecode() {
 
@@ -9,9 +10,15 @@ function ConsoleDecode() {
   }, []);
 
   const [formData, setFormData] = useState("");
-
+  const navigate=useNavigate()
   const handleSubmit = () => {
-    alert("You can go to next task");
+    if(formData=="tec_tist_foss_20_2_5"){
+      alert("You can go to next task");
+      navigate("/pdf-decode-t6")
+    }else{
+      alert("worng answer")
+    }
+
   };
 
   return (

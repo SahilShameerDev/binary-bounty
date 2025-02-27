@@ -1,36 +1,41 @@
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import './App.css'
 import TerminalLogin from './pages/terminalLogin'
 import ConsoleDecode from './pages/ConsoleDecode'
-import { useState } from 'react';
 import PdfDecode from './pages/PdfDecode';
 import CalculatorChallenge from './pages/CalculatorChallenge'
 import WordScramble from './pages/imageFinder/WordScramble';
 import PasswordCrack from './pages/PasswordCrack/PasswordCrack';
+import { useEffect } from 'react';
+import ReverseEngineeringChallenge from './pages/ReverseEngineering/ReverseEngineeringChallenge';
+
 
 
 
 function App() {
-  const [isAuthorized, setIsAuthorized] = useState(false);
-
+  const ExternalRedirect = () => {
+    const navigate = useNavigate();
+  
+    useEffect(() => {
+      window.location.href = "https://binarybountychallenge.vercel.app/";
+    }, [navigate]);
+  
+    return null;
+  };
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<TerminalLogin setIsAuthorized={setIsAuthorized} />} />
-        <Route path="/consoledecode" element={<ProtectedRoute isAuthorized={isAuthorized} />} />
-        <Route path="/t4" element={<PdfDecode/>}/>
-        <Route path="/t1" element={<CalculatorChallenge />}/>
-        <Route path="/t2" element={<WordScramble/>}/>
-        
-        <Route path="/t3" element={<PasswordCrack/>}/>
+        <Route path="/" element={<TerminalLogin />} />
+        <Route path="/word-sample-t1" element={<WordScramble/>}/>
+        <Route path="/password-crack-t2" element={<PasswordCrack/>}/>
+        <Route path="/calculator-t3" element={<CalculatorChallenge />}/>
+        <Route path="/reverse-challenge-t4" element={<ReverseEngineeringChallenge/>}/>
+        <Route path="/console-decode-t5" element={<ConsoleDecode/>}/>
+        <Route path="/pdf-decode-t6" element={<PdfDecode/>}/>
+        <Route path="/morse-t7" element={<ExternalRedirect />} />
       </Routes>
     </BrowserRouter>
   );
-}
-
-function ProtectedRoute({ isAuthorized }) {
-  const location = useLocation();
-  return isAuthorized ? <ConsoleDecode /> : <Navigate to="/" state={{ from: location }} replace />;
 }
 
 export default App;

@@ -4,7 +4,7 @@ import { db } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
-const TerminalLogin = ({ onLogin,setIsAuthorized}) => {
+const TerminalLogin = ({ onLogin}) => {
   const navigate=useNavigate()
   const [step, setStep] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
@@ -59,8 +59,7 @@ const TerminalLogin = ({ onLogin,setIsAuthorized}) => {
           year,
           timestamp: new Date(),
         });
-        setIsAuthorized(true);
-        navigate("/consoledecode")
+        navigate("/word-sample-t1")
        // onLogin({ name, department, year });
         
       } catch (error) {

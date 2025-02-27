@@ -29,7 +29,7 @@ const WordScramble = () => {
   const handleSubmit = () => {
     if (userInput.toUpperCase() === correct) {
       setMessage("✅ Correct! Moving to the next page...");
-      setTimeout(() => navigate("/next-page"), 1000); // Redirect after 1 second
+      setTimeout(() => navigate("/password-crack-t2"), 1000); // Redirect after 1 second
     } else {
       setMessage("❌ Incorrect! New word generated.");
       setUserInput("");

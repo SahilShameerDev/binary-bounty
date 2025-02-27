@@ -59,7 +59,7 @@ const CalculatorChallenge = () => {
   useEffect(() => {
     if (keyRevealed) {
       setTimeout(() => {
-        navigate("/next-task");
+        navigate("/reverse-challenge-t4");
       }, 2000);
     }
   }, [keyRevealed, navigate]);
