@@ -3,6 +3,7 @@ import './App.css'
 import TerminalLogin from './pages/terminalLogin'
 import ConsoleDecode from './pages/ConsoleDecode'
 import { useState } from 'react';
+import PdfDecode from './pages/PdfDecode';
 import CalculatorChallenge from './pages/CalculatorChallenge'
 
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<TerminalLogin setIsAuthorized={setIsAuthorized} />} />
         <Route path="/consoledecode" element={<ProtectedRoute isAuthorized={isAuthorized} />} />
+        <Route path="/t4" element={<PdfDecode/>}/>
         <Route path="/t1" element={<CalculatorChallenge />}/>
 
       </Routes>
