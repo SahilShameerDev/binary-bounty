@@ -6,6 +6,7 @@ import { useState } from 'react';
 import PdfDecode from './pages/PdfDecode';
 import CalculatorChallenge from './pages/CalculatorChallenge'
 import WordScramble from './pages/imageFinder/WordScramble';
+import PasswordCrack from './pages/PasswordCrack/PasswordCrack';
 
 
 
@@ -21,7 +22,7 @@ function App() {
         <Route path="/t1" element={<CalculatorChallenge />}/>
         <Route path="/t2" element={<WordScramble/>}/>
         
-
+        <Route path="/t3" element={<PasswordCrack/>}/>
       </Routes>
     </BrowserRouter>
   );

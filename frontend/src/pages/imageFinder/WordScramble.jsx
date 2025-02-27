@@ -49,7 +49,7 @@ const WordScramble = () => {
         value={userInput}
         onChange={(e) => setUserInput(e.target.value)}
       />
-      <button onClick={handleSubmit}>Submit</button>
+      <button className="submitBtn" onClick={handleSubmit}>Submit</button>
 
       {message && <p className="result-message">{message}</p>}
     </div>

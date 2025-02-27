@@ -29,13 +29,20 @@
     outline: none;
   }
   
-  button {
+  .submitBtn{
     background: none;
     border: 1px solid limegreen;
     color: limegreen;
     padding: 5px 10px;
     font-size: 18px;
     cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .submitBtn:hover {
+    background-color: rgba(50, 205, 50, 0.2);
+    box-shadow: 0 0 10px limegreen;
+    text-shadow: 0 0 5px limegreen;
   }
   
   .start-btn {

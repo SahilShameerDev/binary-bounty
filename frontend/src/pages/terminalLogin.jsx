@@ -98,7 +98,7 @@ const TerminalLogin = ({ onLogin,setIsAuthorized}) => {
               <p>{">"} Enter your year:</p>
               <input type="text" value={year} onChange={(e) => setYear(e.target.value)} className="blinking-cursor" />
             </div>
-            <button type="submit">Login</button>
+            <button className="submitBtn" type="submit">Login</button>
           </form>
         )}
       </div>
