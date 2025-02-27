@@ -5,6 +5,8 @@ import ConsoleDecode from './pages/ConsoleDecode'
 import { useState } from 'react';
 import PdfDecode from './pages/PdfDecode';
 import CalculatorChallenge from './pages/CalculatorChallenge'
+import WordScramble from './pages/imageFinder/WordScramble';
+
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
         <Route path="/consoledecode" element={<ProtectedRoute isAuthorized={isAuthorized} />} />
         <Route path="/t4" element={<PdfDecode/>}/>
         <Route path="/t1" element={<CalculatorChallenge />}/>
+        <Route path="/t2" element={<WordScramble/>}/>
+        
 
       </Routes>
     </BrowserRouter>
