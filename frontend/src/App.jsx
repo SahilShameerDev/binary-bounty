@@ -4,6 +4,7 @@ import TerminalLogin from './pages/terminalLogin'
 import ConsoleDecode from './pages/ConsoleDecode'
 import { useState } from 'react';
 import PdfDecode from './pages/PdfDecode';
+import Morse from './pages/Morse';
 
 function App() {
   const [isAuthorized, setIsAuthorized] = useState(false);
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<TerminalLogin setIsAuthorized={setIsAuthorized} />} />
         <Route path="/consoledecode" element={<ProtectedRoute isAuthorized={isAuthorized} />} />
         <Route path="/t4" element={<PdfDecode/>}/>
+        <Route path="/t7" element={<Morse/>} />
       </Routes>
     </BrowserRouter>
   );
