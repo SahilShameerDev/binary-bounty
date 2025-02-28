@@ -11,7 +11,9 @@ const PasswordCrack = ({ onSuccess }) => {
   const [userGuess, setUserGuess] = useState("");
   const [attempts, setAttempts] = useState([]);
   const [message, setMessage] = useState("");
- const navigate=useNavigate()
+  const [clueClicked, setClueClicked] = useState(false);
+  const navigate = useNavigate();
+
   const checkGuess = () => {
     if (userGuess.length !== 4) {
       setMessage("⚠️ Enter a 4-digit number!");
@@ -20,7 +22,7 @@ const PasswordCrack = ({ onSuccess }) => {
 
     if (userGuess === password) {
       setMessage("✅ Correct! Moving to the next level!");
-      navigate("/calculator-t3")
+      navigate("/calculator-t3");
       return;
     }
 
@@ -38,6 +40,14 @@ const PasswordCrack = ({ onSuccess }) => {
     setAttempts([...attempts, { guess: userGuess, feedback }]);
     setMessage("❌ Incorrect! Try again.");
     setUserGuess("");
+  };
+
+  const handleClueClick = () => {
+    if (!clueClicked) {
+      localStorage.setItem("clueTask2", "Y");
+      setClueClicked(true);
+      setMessage("✅ Key 'Y' stored in local storage!");
+    }
   };
 
   return (
@@ -70,6 +80,16 @@ const PasswordCrack = ({ onSuccess }) => {
         <p>✔ - Correct digit & correct position</p>
         <p>❓ - Correct digit but wrong position</p>
         <p>❌ - Incorrect digit</p>
+      </div>
+
+      {/* Click Here for Clue */}
+      <div className="clue-section" style={{ position: "absolute", bottom: "10px", left: "10px" }}>
+        <p
+          style={{ color: "blue", cursor: "pointer", textDecoration: "underline" }}
+          onClick={handleClueClick}
+        >
+          Click Here
+        </p>
       </div>
     </div>
   );

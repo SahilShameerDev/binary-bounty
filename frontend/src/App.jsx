@@ -8,6 +8,7 @@ import WordScramble from './pages/imageFinder/WordScramble';
 import PasswordCrack from './pages/PasswordCrack/PasswordCrack';
 import { useEffect } from 'react';
 import ReverseEngineeringChallenge from './pages/ReverseEngineering/ReverseEngineeringChallenge';
+import FinalChallenge from './pages/FinalChallenge';
 
 
 
@@ -33,6 +34,8 @@ function App() {
         <Route path="/console-decode-t5" element={<ConsoleDecode/>}/>
         <Route path="/pdf-decode-t6" element={<PdfDecode/>}/>
         <Route path="/morse-t7" element={<ExternalRedirect />} />
+        <Route path="/final-challenge-f1" element={<FinalChallenge/>} />
+
       </Routes>
     </BrowserRouter>
   );

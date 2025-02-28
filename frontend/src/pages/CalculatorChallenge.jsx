@@ -13,6 +13,7 @@ const CalculatorChallenge = () => {
   const [keyRevealed, setKeyRevealed] = useState(false);
   const [nextRoundKey, setNextRoundKey] = useState("");
   const [validUser, setValidUser] = useState(false);
+  const [clueClicked, setClueClicked] = useState(false);
 
   useEffect(() => {
     if (!storedUsername) {
@@ -64,6 +65,13 @@ const CalculatorChallenge = () => {
     }
   }, [keyRevealed, navigate]);
 
+  const handleClueClick = () => {
+    if (!clueClicked) {
+      localStorage.setItem("clueTask3", "N");
+      setClueClicked(true);
+    }
+  };
+
   return (
     <div className="calculator-container">
       <h2 className="title">Calculator Challenge</h2>
@@ -96,6 +104,14 @@ const CalculatorChallenge = () => {
               <p className="redirect-message">Redirecting to the next task...</p>
             </div>
           )}
+          <div className="clue-section" style={{ position: "absolute", bottom: "10px", left: "10px" }}>
+            <p
+              style={{ color: "blue", cursor: "pointer", textDecoration: "underline" }}
+              onClick={handleClueClick}
+            >
+              Click Here
+            </p>
+          </div>
         </>
       ) : (
         <p className="invalid-user">Invalid user. Please log in with a registered username.</p>

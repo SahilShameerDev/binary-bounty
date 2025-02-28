@@ -4,21 +4,26 @@ import "./console.css";
 import { useNavigate } from "react-router-dom";
 
 function ConsoleDecode() {
-
   useEffect(() => {
     console.log(ENCODED_KEY);
   }, []);
 
-  const [formData, setFormData] = useState("");
-  const navigate=useNavigate()
-  const handleSubmit = () => {
-    if(formData=="tec_tist_foss_20_2_5"){
-      alert("You can go to next task");
-      navigate("/pdf-decode-t6")
-    }else{
-      alert("worng answer")
+  const handleClueClick = () => {
+    if (!clueClicked) {
+      localStorage.setItem("clueTask4", "A");
+      setClueClicked(true);
     }
+  };
 
+  const [formData, setFormData] = useState("");
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    if (formData == "tec_tist_foss_20_2_5") {
+      alert("You can go to next task");
+      navigate("/pdf-decode-t6");
+    } else {
+      alert("worng answer");
+    }
   };
 
   return (
@@ -55,6 +60,21 @@ function ConsoleDecode() {
           />
           <button onClick={handleSubmit}>Submit</button>
         </div>
+      </div>
+      <div
+        className="clue-section"
+        style={{ position: "absolute", bottom: "10px", left: "10px" }}
+      >
+        <p
+          style={{
+            color: "blue",
+            cursor: "pointer",
+            textDecoration: "underline",
+          }}
+          onClick={handleClueClick}
+        >
+          Click Here
+        </p>
       </div>
     </div>
   );

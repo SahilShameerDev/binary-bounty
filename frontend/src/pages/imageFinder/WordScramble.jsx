@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // For navigation
+import { useNavigate } from "react-router-dom";
 import "./WordScramble.css";
 
 const wordList = [
@@ -10,16 +10,18 @@ const wordList = [
   { scrambled: "ROFEMARKW", correct: "FRAMEWORK" },
   { scrambled: "TERNITEN", correct: "INTERNET" },
   { scrambled: "CNECOITNNO", correct: "CONNECTION" },
-
 ];
+
+const CLUE_LETTER = "B";
 
 const WordScramble = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [userInput, setUserInput] = useState("");
   const [message, setMessage] = useState("");
-  const navigate = useNavigate(); // For redirecting
+  const [clueVisible, setClueVisible] = useState(false);
+  const [clueClicked, setClueClicked] = useState(false);
+  const navigate = useNavigate();
 
-  // Pick a random word at the start
   useEffect(() => {
     setCurrentWordIndex(Math.floor(Math.random() * wordList.length));
   }, []);
@@ -28,12 +30,27 @@ const WordScramble = () => {
 
   const handleSubmit = () => {
     if (userInput.toUpperCase() === correct) {
-      setMessage("✅ Correct! Moving to the next page...");
-      setTimeout(() => navigate("/password-crack-t2"), 1000); // Redirect after 1 second
+      setMessage("✅ Correct! Click the letter below to store it.");
+      setClueVisible(true);
     } else {
-      setMessage("❌ Incorrect! New word generated.");
+      setMessage("❌ Incorrect! Try again.");
       setUserInput("");
-      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % wordList.length); // Change word
+    }
+  };
+
+  const handleClueClick = () => {
+    if (!clueClicked) {
+      localStorage.setItem("clueTask1", CLUE_LETTER);
+      setClueClicked(true);
+      setMessage("✅ Key stored! You can now proceed.");
+    }
+  };
+
+  const handleNextTask = () => {
+    if (clueClicked) {
+      navigate("/password-crack-t2");
+    } else {
+      setMessage("❗ Click the letter first to store your key.");
     }
   };
 
@@ -49,9 +66,31 @@ const WordScramble = () => {
         value={userInput}
         onChange={(e) => setUserInput(e.target.value)}
       />
-      <button className="submitBtn" onClick={handleSubmit}>Submit</button>
+      <button className="submitBtn" onClick={handleSubmit}>Submit</button> <br /><br />
 
       {message && <p className="result-message">{message}</p>}
+
+      {clueVisible && (
+        <>
+          <p className="clue-instruction">
+            🔑 Click this letter! You need to collect all hidden letters from upcoming tasks.
+          </p>
+          <h3
+            className="clue-letter"
+            onClick={handleClueClick}
+            style={{
+              cursor: clueClicked ? "default" : "pointer",
+              color: clueClicked ? "green" : "blue",
+              fontWeight: "bold",
+              transition: "color 0.3s",
+            }}
+          >
+            {CLUE_LETTER}
+          </h3>
+        </>
+      )}
+
+      <button className="nextBtn" onClick={handleNextTask}>Next Task</button>
     </div>
   );
 };

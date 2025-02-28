@@ -94,7 +94,7 @@ const TerminalLogin = ({ onLogin}) => {
               <input type="text" value={department} onChange={(e) => setDepartment(e.target.value)} className="blinking-cursor" />
             </div>
             <div className="input-group">
-              <p>{">"} Enter your year:</p>
+              <p>{">"} Enter your Semester:</p>
               <input type="text" value={year} onChange={(e) => setYear(e.target.value)} className="blinking-cursor" />
             </div>
             <button className="submitBtn" type="submit">Login</button>
