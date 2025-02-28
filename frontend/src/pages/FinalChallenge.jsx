@@ -14,7 +14,7 @@ const FinalChallenge = () => {
     const clue4 = localStorage.getItem("clueTask4");
     const clue5 = localStorage.getItem("clueTask5");
     const clue6 = localStorage.getItem("clueTask6");
-    console.log("WIN")
+    console.log("NIW")
     if (clue1 === "B" && clue2 === "O" && clue3 == "U" && clue4=="N" && clue5=="T" && clue6=="Y") {
       setCanProceed(true);
     } else {
