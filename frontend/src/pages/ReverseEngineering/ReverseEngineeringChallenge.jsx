@@ -49,11 +49,9 @@ const ReverseEngineeringChallenge = () => {
     const correctInput = "TREASURE";
     const generatedOutput = caesarCipher(userInput, 3); // Shift by 3
     setOutput(generatedOutput);
-    console.log("Generated Output:", generatedOutput);
 
     if (userInput.toUpperCase() === correctInput) {
       setKeyRevealed(true);
-      console.log("Correct input detected!");
     }
   };
 
