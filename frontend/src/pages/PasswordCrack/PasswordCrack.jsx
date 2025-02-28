@@ -21,9 +21,16 @@ const PasswordCrack = ({ onSuccess }) => {
     }
 
     if (userGuess === password) {
-      setMessage("✅ Correct! Moving to the next level!");
-      navigate("/calculator-t3");
-      return;
+      if(!clueClicked){
+        alert("Ensure that clue is saved... You can't move forward...")
+      }
+      if(clueClicked){
+        setMessage("✅ Correct! Moving to the next level!...");
+        setTimeout(() => {
+          navigate("/calculator-t3");
+        }, 3000);      
+        return;
+      }
     }
 
     let feedback = "";
@@ -38,15 +45,19 @@ const PasswordCrack = ({ onSuccess }) => {
     }
 
     setAttempts([...attempts, { guess: userGuess, feedback }]);
-    setMessage("❌ Incorrect! Try again.");
+    if(userGuess === password && !clueClicked){
+      setMessage("✅ Correct! Clue Not Saved.");
+    }else{
+      setMessage("❌ Incorrect! Try again.");
+    }
     setUserGuess("");
   };
 
   const handleClueClick = () => {
     if (!clueClicked) {
-      localStorage.setItem("clueTask2", "Y");
+      localStorage.setItem("clueTask2", "O");
       setClueClicked(true);
-      setMessage("✅ Key 'Y' stored in local storage!");
+      setMessage("✅ Key 'O' stored in local storage!");
     }
   };
 

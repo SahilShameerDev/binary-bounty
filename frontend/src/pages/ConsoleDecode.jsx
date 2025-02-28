@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-var ENCODED_KEY = "WkVkV2FsZ3pVbkJqTTFKbVdtMDVlbU14T0hsTlJqaDVXSHBWUFE9PQ==";
+var ENCODED_KEY = "dGVjX3Rpc3RfZm9zc18yMF8yXzU=";
 import "./console.css";
 import { useNavigate } from "react-router-dom";
 
@@ -9,18 +9,21 @@ function ConsoleDecode() {
   }, []);
 
   const handleClueClick = () => {
-    if (!clueClicked) {
-      localStorage.setItem("clueTask4", "A");
-      setClueClicked(true);
-    }
+      localStorage.setItem("clueTask5", "T");
+      alert("✅ Key 'T' stored! You can now proceed.");
   };
 
   const [formData, setFormData] = useState("");
   const navigate = useNavigate();
   const handleSubmit = () => {
     if (formData == "tec_tist_foss_20_2_5") {
-      alert("You can go to next task");
-      navigate("/pdf-decode-t6");
+      var userinput=prompt("what is the RETTEL TSRIF ? (What You Got Think Reverse)")
+      if(userinput=="5"){
+        handleClueClick()
+        navigate("/pdf-decode-t6");
+      }else{
+        alert("Nop!!!!!!!!!!!")
+      }
     } else {
       alert("worng answer");
     }
@@ -60,21 +63,6 @@ function ConsoleDecode() {
           />
           <button onClick={handleSubmit}>Submit</button>
         </div>
-      </div>
-      <div
-        className="clue-section"
-        style={{ position: "absolute", bottom: "10px", left: "10px" }}
-      >
-        <p
-          style={{
-            color: "blue",
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-          onClick={handleClueClick}
-        >
-          Click Here
-        </p>
       </div>
     </div>
   );

@@ -1,0 +1,58 @@
+
+  /* Main Container */
+  .winner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    width: 100%;
+  }
+  
+  /* Card Styling */
+  .winner-card {
+    background: limegreen;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 255, 0, 0.3);
+    text-align: center;
+    max-width: 500px;
+    border: 3px solid black;
+  }
+  
+  /* Title Styling */
+  .winner-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+  }
+  
+  /* Subtitle */
+  .winner-subtitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  /* Event Name */
+  .winner-event {
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    margin: 10px 0;
+  }
+  
+  /* Description */
+  .winner-description {
+    font-size: 16px;
+    color: black;
+    margin-top: 10px;
+  }
+  
+  /* Footer */
+  .winner-footer {
+    margin-top: 15px;
+    font-weight: bold;
+    color: black;
+  }
+  

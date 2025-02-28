@@ -59,18 +59,14 @@ const CalculatorChallenge = () => {
 
   useEffect(() => {
     if (keyRevealed) {
+      localStorage.setItem("clueTask3", "U");
+      setClueClicked(true);
+      alert("✅ Key 'U' stored in local storage!");
       setTimeout(() => {
         navigate("/reverse-challenge-t4");
-      }, 2000);
+      }, 3000);
     }
   }, [keyRevealed, navigate]);
-
-  const handleClueClick = () => {
-    if (!clueClicked) {
-      localStorage.setItem("clueTask3", "N");
-      setClueClicked(true);
-    }
-  };
 
   return (
     <div className="calculator-container">
@@ -104,14 +100,6 @@ const CalculatorChallenge = () => {
               <p className="redirect-message">Redirecting to the next task...</p>
             </div>
           )}
-          <div className="clue-section" style={{ position: "absolute", bottom: "10px", left: "10px" }}>
-            <p
-              style={{ color: "blue", cursor: "pointer", textDecoration: "underline" }}
-              onClick={handleClueClick}
-            >
-              Click Here
-            </p>
-          </div>
         </>
       ) : (
         <p className="invalid-user">Invalid user. Please log in with a registered username.</p>

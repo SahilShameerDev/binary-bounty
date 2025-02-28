@@ -5,16 +5,20 @@ function PdfDecode() {
   const [formData, setFormData] = useState("");
   const navigate = useNavigate();
   const handleClueClick = () => {
-    if (!clueClicked) {
-      localStorage.setItem("clueTask4", "I");
-      setClueClicked(true);
-    }
+      localStorage.setItem("clueTask6", "Y");
+      alert("✅ Key 'Y' stored! You can now proceed.");
   };
   const handleSubmit = () => {
     //handle the firebase integration and verfiy with user answer
     if (formData == "you_got_key=1") {
-      alert("You can go to next task");
-      navigate("/morse-t7");
+      var userInput=prompt("You Got What... ?")
+      if(userInput=="1"){
+        handleClueClick()
+        navigate("/morse-t7");
+      }else{
+        alert("Nop!!!!!!")
+      }
+
     } else {
       alert("Not Correct!!!!!!!");
     }
@@ -41,7 +45,6 @@ function PdfDecode() {
       })
       .catch((error) => console.error("Error downloading the PDF:", error));
   }
-
   return (
     <div>
       <h1>Task 4</h1>
@@ -161,21 +164,6 @@ function PdfDecode() {
           placeholder="Paste"
         />
         <button onClick={handleSubmit}>Submit</button>
-      </div>
-      <div
-        className="clue-section"
-        style={{ position: "absolute", bottom: "10px", left: "10px" }}
-      >
-        <p
-          style={{
-            color: "blue",
-            cursor: "pointer",
-            textDecoration: "underline",
-          }}
-          onClick={handleClueClick}
-        >
-          Click Here
-        </p>
       </div>
     </div>
   );

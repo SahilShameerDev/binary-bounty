@@ -12,7 +12,7 @@ const ReverseEngineeringChallenge = () => {
   const [keyRevealed, setKeyRevealed] = useState(false);
   const [nextRoundKey, setNextRoundKey] = useState("");
   const [validUser, setValidUser] = useState(false);
-
+  const [clueClicked, setClueClicked] = useState(false);
   useEffect(() => {
     if (!storedUsername) {
       setValidUser(false);
@@ -57,18 +57,14 @@ const ReverseEngineeringChallenge = () => {
     }
   };
 
-  const handleClueClick = () => {
-    if (!clueClicked) {
-      localStorage.setItem("clueTask4", "R");
-      setClueClicked(true);
-    }
-  };
-
   useEffect(() => {
     if (keyRevealed) {
+      localStorage.setItem("clueTask4", "N");
+      setClueClicked(true);
+      alert("✅ Key 'N' stored in local storage!");
       setTimeout(() => {
-        navigate("/console-decode-t5");
-      }, 2000);
+        navigate("/middle-story");
+      }, 3000);
     }
   }, [keyRevealed, navigate]);
 
@@ -97,14 +93,6 @@ const ReverseEngineeringChallenge = () => {
               <p className="redirect-message">Redirecting to the next task...</p>
             </div>
           )}
-          <div className="clue-section" style={{ position: "absolute", bottom: "10px", left: "10px" }}>
-            <p
-              style={{ color: "blue", cursor: "pointer", textDecoration: "underline" }}
-              onClick={handleClueClick}
-            >
-              Click Here
-            </p>
-          </div>
         </>
       ) : (
         <p className="invalid-user">Invalid user. Please log in with a registered username.</p>

@@ -9,6 +9,8 @@ import PasswordCrack from './pages/PasswordCrack/PasswordCrack';
 import { useEffect } from 'react';
 import ReverseEngineeringChallenge from './pages/ReverseEngineering/ReverseEngineeringChallenge';
 import FinalChallenge from './pages/FinalChallenge';
+import MiddleStory from './pages/MiddleStory';
+import Complition from './pages/completion/Complition';
 
 
 
@@ -31,11 +33,12 @@ function App() {
         <Route path="/password-crack-t2" element={<PasswordCrack/>}/>
         <Route path="/calculator-t3" element={<CalculatorChallenge />}/>
         <Route path="/reverse-challenge-t4" element={<ReverseEngineeringChallenge/>}/>
+        <Route path="/middle-story" element={<MiddleStory/>}/>
         <Route path="/console-decode-t5" element={<ConsoleDecode/>}/>
         <Route path="/pdf-decode-t6" element={<PdfDecode/>}/>
         <Route path="/morse-t7" element={<ExternalRedirect />} />
         <Route path="/final-challenge-f1" element={<FinalChallenge/>} />
-
+        <Route path='/completed-bin-bounty-2k25-winner' element={<Complition/>}/>
       </Routes>
     </BrowserRouter>
   );

@@ -42,7 +42,7 @@ const WordScramble = () => {
     if (!clueClicked) {
       localStorage.setItem("clueTask1", CLUE_LETTER);
       setClueClicked(true);
-      setMessage("✅ Key stored! You can now proceed.");
+      setMessage("✅ Key 'B' stored! You can now proceed.");
     }
   };
 
@@ -56,7 +56,7 @@ const WordScramble = () => {
 
   return (
     <div className="word-scramble-container">
-      <h2>🔡 Word Scramble Challenge</h2>
+      <h2 className="Title">🔡 Word Scramble Challenge</h2>
       <p>Unscramble the word below to find a tech-related term:</p>
       <h3 className="scrambled-word">{scrambled}</h3>
 
